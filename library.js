@@ -6,7 +6,7 @@ function addBookToLibrary() {}
 
 function displayBooks(myLibrary) {
   for (i = 0; i < myLibrary.length; i++) {
-    container = document.querySelector(".container");
+    const container = document.querySelector(".container");
     div = document.createElement("div");
     div.innerHTML = myLibrary[i];
     container.appendChild(div);
@@ -14,3 +14,10 @@ function displayBooks(myLibrary) {
 }
 
 displayBooks(myLibrary);
+
+const dialog = document.querySelector("dialog");
+const addButton = document.querySelector(".addButton");
+
+addButton.onclick = () => {
+  dialog.showModal();
+};
