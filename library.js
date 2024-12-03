@@ -45,16 +45,21 @@ const dialog = document.querySelector("dialog");
 const addButton = document.querySelector(".addButton");
 const closeButton = document.querySelector(".closeButton");
 
-addButton.onclick = () => {
+addButton.onclick = (event) => {
   dialog.showModal();
+  event.stopPropagation();
+  event.preventDefault();
 };
 
-closeButton.onclick = () => {
+closeButton.onclick = (event) => {
   dialog.close();
   console.log("Closed");
+  event.stopPropagation();
+  event.preventDefault();
 };
 
 const bookForm = document.querySelector(".bookForm");
+
 bookForm.addEventListener("submit", (event) => {
   event.stopPropagation();
   event.preventDefault();
