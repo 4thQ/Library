@@ -8,29 +8,26 @@
     <script src="/library.js" defer></script>
   </head>
   <body>
-    <div class="container"></div>
-
-    <button class="addButton">Add Book</button>
+    <div class="container">
+      <div class="add"><button class="addButton">Add</button></div>
+    </div>
 
     <dialog>
-      <form class="bookForm" method="" action="" ">
-        <label for="name">Name</label>
-        <input class="name" name="name" type="text" />
-        <br />
+      <form>
+        <button class="closeButton" type="button">x</button> <br />
+        <label for="book-title">Title:</label> <br />
+        <input name="book-title" type="text" /><br />
 
-        <label for="title">Titles</label>
-        <input class="title" name="title" type="text" />
-        <br />
+        <label for="book-title">Author:</label> <br />
+        <input name="author" type="text" /><br />
 
-        <label for="pages">Pages</label>
-        <input class="pages" name="pages" type="number" />
-        <br />
+        <label for="book-title">Pages:</label><br />
+        <input name="pages" type="text" /><br />
 
-        <label for="read">Read or not?</label>
-        <input class="read" name="read" type="checkbox" />
+        <label for="book-title">Status:</label><br />
+        <input name="status" type="text" /><br />
 
-        <button class="submit" type="submit">Submit</button>
-        <button class="closeButton">Close</button>
+        <button class="submitButton" type="submit">Submit</button>
       </form>
     </dialog>
   </body>
