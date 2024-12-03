@@ -1,16 +1,29 @@
-const myLibrary = ["Harri Putor", "Tingled", "Twolight"];
+const myLibrary = [];
 
-function Book() {}
+function Book(author, title, pages, read) {
+  this.author = author;
+  this.title = title;
+  this.pages = pages;
+  this.read = read;
+}
 
-function addBookToLibrary() {}
+const book1 = new Book("N Gurung", "GoodNight", 10, "read");
+const book2 = new Book("H Jan", "GoodMorning", 20, "read");
 
-function displayBooks(myLibrary) {
-  for (i = 0; i < myLibrary.length; i++) {
-    container = document.querySelector(".container");
-    div = document.createElement("div");
-    div.innerHTML = myLibrary[i];
-    container.appendChild(div);
+function addBookToLibrary(bookObject) {
+  myLibrary.push(bookObject);
+  console.log(myLibrary);
+}
+
+addBookToLibrary(book1);
+addBookToLibrary(book2);
+
+function displayBook(myLibrary) {
+  for (const book of myLibrary) {
+    const div = document.createElement("div");
+    div.innerHTML = book.title;
+    document.body.appendChild(div);
   }
 }
 
-displayBooks(myLibrary);
+displayBook(myLibrary);
