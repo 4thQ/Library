@@ -5,14 +5,30 @@
 
 .container {
   background-color: aqua;
+  width: 700px;
+  height: 200px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 10px;
-  padding: 10px;
-  width: 70vw;
-  height: 20vh;
 }
 
-div {
-  background-color: bisque;
+.add {
+  font-size: 30px;
+  display: flex;
+}
+
+.add button {
+  flex-grow: 1;
+  background-color: gold;
+}
+
+.container div {
+  background-color: yellow;
+  margin: 5px;
+}
+
+p {
+  background-color: rgb(180, 118, 60);
+  width: 13em;
+  height: 2em;
+  margin: 5px;
 }
