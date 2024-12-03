@@ -56,9 +56,39 @@ closeButton.onclick = () => {
 
 const bookForm = document.querySelector(".bookForm");
 bookForm.addEventListener("submit", (event) => {
+  event.stopPropagation();
   event.preventDefault();
+
   const name = document.querySelector('[name="name"]').value;
+  const title = document.querySelector('[name="title"]').value;
+  const pages = document.querySelector('[name="pages"]').value;
+  const status = document.querySelector('[name="read"]').value;
+
+  const container = document.querySelector(".container");
+  const div = document.createElement("div");
+  container.appendChild(div);
+
+  const p = document.createElement("p");
+  p.textContent = "Author: " + name;
+  div.appendChild(p);
+
+  const p1 = document.createElement("p");
+  p1.textContent = "Title: " + title;
+  div.appendChild(p1);
+
+  const p2 = document.createElement("p");
+  p2.textContent = "Pages: " + pages;
+  div.appendChild(p2);
+
+  const p3 = document.createElement("p");
+  p3.textContent = "Read: " + status;
+  div.appendChild(p3);
+
+  readStatusButton = document.createElement("button");
+  readStatusButton.textContent = "Status";
+  div.appendChild(readStatusButton);
+
+  removeButton = document.createElement("button");
+  removeButton.textContent = "Remove!";
+  div.appendChild(removeButton);
 });
-// const name = document.querySelector('[name="name"]').value;
-//   myLibrary.push(name);
-//   console.log(myLibrary);
