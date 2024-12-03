@@ -1,6 +1,6 @@
 const myLibrary = [
-  { name: "J Miguel", title: "Remeber me", pages: 102, read: "not read" },
-  { name: "G Nirajan", title: "Masterjan", pages: 0, read: "reading" },
+  { name: "J Miguel", title: "Remeber me", pages: 102, read: "Read" },
+  { name: "G Nirajan", title: "Masterjan", pages: 0, read: "Reading" },
 ];
 
 function Book() {}
@@ -26,16 +26,28 @@ function displayBooks(myLibrary) {
     div.appendChild(p2);
 
     const p3 = document.createElement("p");
-    p3.textContent = "Read: " + book.read;
+    p3.textContent = "Status: " + book.read;
     div.appendChild(p3);
 
     readStatusButton = document.createElement("button");
     readStatusButton.textContent = "Status";
     div.appendChild(readStatusButton);
 
+    readStatusButton.addEventListener("click", () => {
+      if (p3.innerText === "Status: Read") {
+        p3.innerText = "Status: Reading";
+      } else {
+        p3.innerText = "Status: Read";
+      }
+    });
+
     removeButton = document.createElement("button");
     removeButton.textContent = "Remove!";
     div.appendChild(removeButton);
+
+    removeButton.addEventListener("click", (e) => {
+      e.target.parentNode.remove();
+    });
   }
 }
 
@@ -61,13 +73,22 @@ closeButton.onclick = (event) => {
 const bookForm = document.querySelector(".bookForm");
 
 bookForm.addEventListener("submit", (event) => {
+  let bookStatus = "";
   event.stopPropagation();
   event.preventDefault();
 
   const name = document.querySelector('[name="name"]').value;
   const title = document.querySelector('[name="title"]').value;
   const pages = document.querySelector('[name="pages"]').value;
-  const status = document.querySelector('[name="read"]').value;
+  const status = document.querySelector('[name="read"]');
+
+  var isChecked = status.checked;
+
+  if (isChecked == true) {
+    bookStatus = "Read";
+  } else {
+    bookStatus = "Not read";
+  }
 
   const container = document.querySelector(".container");
   const div = document.createElement("div");
@@ -86,14 +107,26 @@ bookForm.addEventListener("submit", (event) => {
   div.appendChild(p2);
 
   const p3 = document.createElement("p");
-  p3.textContent = "Read: " + status;
+  p3.textContent = "Status: " + bookStatus;
   div.appendChild(p3);
 
   readStatusButton = document.createElement("button");
   readStatusButton.textContent = "Status";
   div.appendChild(readStatusButton);
 
+  readStatusButton.addEventListener("click", () => {
+    if (p3.innerText === "Status: Read") {
+      p3.innerText = "Status: Reading";
+    } else {
+      p3.innerText = "Status: Read";
+    }
+  });
+
   removeButton = document.createElement("button");
   removeButton.textContent = "Remove!";
   div.appendChild(removeButton);
+
+  removeButton.addEventListener("click", (e) => {
+    e.target.parentNode.remove();
+  });
 });
