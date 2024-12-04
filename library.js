@@ -21,30 +21,32 @@ function displayBook(myLibrary) {
   container.appendChild(div);
 
   const p = document.createElement("p");
-  p.textContent = "Title: " + book.title;
+  p.innerHTML = "<strong>Title: </strong" + book.title;
 
   const p1 = document.createElement("p");
-  p1.textContent = "Author: " + book.author;
+  p1.innerHTML = "<strong>Author: </strong>" + book.author;
 
   const p2 = document.createElement("p");
-  p2.textContent = "Pages:" + book.pages;
+  p2.innerHTML = "<strong>Pages: </strong>" + book.pages;
 
   const p3 = document.createElement("p");
-  p3.textContent = "Status:" + book.read;
+  p3.innerHTML = "<strong>Status: </strong>" + book.read;
 
   div.append(p, p1, p2, p3);
 
   const statusButton = document.createElement("button");
+  statusButton.classList.add("status-button");
   statusButton.textContent = "Status";
   statusButton.addEventListener("click", (e) => {
-    if (p3.innerText === "Status:Read") {
-      p3.innerText = "Status:Not Read";
+    if (p3.innerHTML === "<strong>Status: </strong>Read") {
+      p3.innerHTML = "<strong>Status: </Strong>Not Read";
     } else {
-      p3.innerText = "Status:Read";
+      p3.innerHTML = "<strong>Status: </strong>Read";
     }
   });
 
   const deleteButton = document.createElement("button");
+  deleteButton.classList.add("delete-button");
   deleteButton.textContent = "Delete";
   deleteButton.addEventListener("click", (e) => {
     container.removeChild(div);
