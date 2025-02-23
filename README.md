@@ -1,4 +1,4 @@
-# Library Management System
+# Library Management
 
 A dynamic library management system where users can add, remove, and update book details. This project provides an interactive way to manage a collection of books using JavaScript.
 
@@ -10,7 +10,7 @@ A dynamic library management system where users can add, remove, and update book
 - **Toggle Read Status**: Books have a button to toggle their read/unread status.
 - **Responsive UI**: User-friendly interface for managing books.
 
-## Live Website : https://github.com/4thQ/Library.git
+## Live Website : https://4thq.github.io/Library/
 
 
 ## Contributing
